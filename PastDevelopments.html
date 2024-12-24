@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<head>  
+<meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Past Developments in Astrophysics</title>
+  <link rel="stylesheet" typ="text/css"href="style.css">
+  
+  <style>
+    
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #85adad;;
+      min-width: 200%;
+      box-shadow: 0px 8px 16px 0px rgba(0.2,0.2,0.2,0.2);
+      padding: 0%;
+      z-index: 0;
+    }
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+
+.dropdown-content {
+  color: black;
+  font-family: helvetica;
+  padding: 2%;
+}
+
+.cbCollapseRow {
+  display: flex;
+}
+    
+    .cbCollapse {
+      background-color: #eee;
+      color: #444;
+      cursor: pointer;
+      padding: 18px;
+      width: 100%;
+      border: none;
+    }
+
+    .content {
+      padding: 0 18px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease-out;
+      background-color: #f1f1f1;
+      width: 100%;
+    }
+    * {box-sizing: border-box;}
+
+    .img-zoom-container {
+      position: absolute;
+    }
+    .img-zoom-lens {
+      position: absolute;
+      border: 1px solid #d4d4d4;
+      width: 40px;
+      height: 40px;
+    }
+    .img-zoom-result {
+      border: 0px solid #d4d4d4; 
+      width: 400px; 
+      height: 400px;
+    }
+    </style>
+    <script>
+    function imageZoom(imgID, resultID) {
+    var img, lens, result, cx, cy;
+    img = document.getElementById(imgID);
+    result = document.getElementById(resultID);
+
+    lens = document.createElement("DIV");
+    lens.setAttribute("class", "img-zoom-lens");
+
+    img.parentElement.insertBefore(lens, img);
+
+    cx = result.offsetWidth / lens.offsetWidth;
+    cy = result.offsetHeight / lens.offsetHeight;
+
+    result.style.backgroundImage = "url('" + img.src + "')";
+    result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+
+    lens.addEventListener("mousemove", moveLens);
+    img.addEventListener("mousemove", moveLens);
+
+    lens.addEventListener("touchmove", moveLens);
+    img.addEventListener("touchmove", moveLens);
+
+    function moveLens(e) {
+      var pos, x, y;
+      e.preventDefault();
+      pos = getCursorPos(e);
+      x = pos.x - (lens.offsetWidth / 2);
+      y = pos.y - (lens.offsetHeight / 2);
+      if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+      if (x < 0) {x = 0;}
+      if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+      if (y < 0) {y = 0;}
+      lens.style.left = x + "px";
+      lens.style.top = y + "px";
+      result.style.backgroundPosition = "-" + (x*cx) + "px -" + (y*cy) + "px";
+    }
+    function getCursorPos(e) {
+    var a, x = 0, y = 0;
+    e = e || window.event;
+    a = img.getBoundingClientRect();
+    x = e.pageX - a.left;
+    y = e.pageY - a.top;
+    x = x - window.pageXOffset;
+    y = y - window.pageYOffset;
+    return {x : x, y : y};
+    }
+    }
+    </script>
+  
+  </style>
+
+</head>
+<html>
+  <body>
+
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="ModernIssues.html">  <div class="dropdown">
+          <span>Modern Problems</span>
+          <div class="dropdown-content">
+            <h5><a href="ModernIssues.html">Modern Problems</a></h5>
+            <h5><a href="BlackHoleInformationParadox.html">Black Hole Information Paradox</a></h5>
+            <h5><a href="DarkMatter.html">Dark Matter</a></h5>
+            <h5><a href="TheEarlyUniverse.html">The Origins Of The Universe</a></h5>
+          </div>
+        </div></a></li>
+        <li><a href="PastDevelopments.html">Past Developments and Discoveries</a></li>
+        <li><a href="Applications.html">Applications</a></li>
+         <li><a href="InTheMedia.html">In The Media And Public Sphere</a></li>
+      </ul>
+    </nav>
+
+<table style="width:80%">
+<tr>
+  <th><h1>Past Developments and Discoveries <style> h1 {text-align: center} </style></h1></br></br><h4><i>Some of the key ideas that shaped the field of astrophysics.</i></h4>
+</th>
+  <th>
+    <img src="images/PastDevelopmentsBackground.jpg"alt="Past Developments Background"class="center"style="width: 150%;height: 150%">
+  </th>
+</tr>
+</table>
+  
+    </br>
+    <hr>
+    </br>
+    </br>
+
+       <table style="width: 100%; padding-left: 24px; padding-right: -10;">
+         <tr>
+           <th style="padding-left: 70px;width: 60%"><h2>General Relativity</h2></br>General Relativity is a physical theory developed by Albert Einstein in 1915. It states that space and time are part of the same entity known as <span style="color: brown"><i>“spacetime”</i></span>. The presence of mass bends the “fabric” of spacetime causing what we perceive as gravity. This also causes time to “slow down” near warped spacetime in a phenomenon known as <span style="color: brown">time dilation</span>. More specifically, time dilation describes the difference in the elapsed times of two clocks with a relative velocity between them or a difference in the strength of gravity in their locations. Although General Relativity produces almost the same predictions as Newtonian Mechanics, this small discrepency between the theories in time allowed the theory to be tested in an experiment known as the Hafele-Keating experiment. In this experiment, four atomic clocks were taken aboard commercial arliners which flew around the world twice. All four of these clocks were then compared with the ones relatively stationary on Earth. As predicted by the theory, the clocks that were on the aircrafts were slightly behind the clocks that were on Earth.</br></br></br>
+       </th>
+           <th style="padding-right: 0px;"><img src="images/SpaceTimeGR.jpg"alt="Illustration of curved spacetime"style="height:50%;width:50%;"/>
+           </th>
+    </tr>
+     <tr>
+          <th style="padding-left: 50px;"><h2>The Discovery Of Black Holes</h2></br> Until the discovery of Cygnus X-1 6,197 light years away, black holes were purely theoretical objects. In fact, after realizing that black holes were predicted by his theory of General Relativity, Einstein repeatedly denied that they could form. In 1939, he even published a paper where he mistakenly argued that it was physically impossible for a collapsing star to form a singularity and acquire a <span style="color: brown">Schwarzchild radius</span>, or event horizon. </br></br><span style="color: brown">Cygnus X-1</span> is a stellar-mass black hole (15 times mass of the Sun). It was discovered during a 1964 sounding rocket flight and later confirmed to be a black hole, opening up new avenues in the study of astrophysics. Likewise, the discovery of black holes exposed fundamental flaws in the theory of general relativity such as the breakdown of mathematics concerning the singularity of the black hole. An image of Cygnus X-1 6 is shown on the right.
+       </th>
+          <th style="padding-right: 0px;"><img src="images/blackhole.jpg"alt="Image of Cygnus X-1"style="height: 50%;width:50%;"/></th>
+         </tr>
+         <tr>
+           <th style="padding-left: 50px"><h2>Tycho Brahe's Observation Of A Supernova</h2></br></br>Tycho Brahe was a Danish astronomer who, in 1572, noticed a "new star" in the constellation of Cassiopeia. Little did he know that this star was actually a powerful <span style="color: brown">supernova</span>, a violent explosion triggered at the end of a star's life. Over the next few decades, Brahe used detailed observations of this supernova along with other interstellar phenomenon to argue against the Ptolemaic model of the Universe which posited a stationary Earth in the center. He did so by stating that the "star" was much farther away than the Moon. This would mean that the Universe, beyond the Sun and planets, had the ability to move and change. <span style="color: brown">"Tycho's supernova"</span>, as it came to be known, was one of the few recorded supernovas in the Milky Way Galaxy.</br></br></th>
+         <th style="padding-right: 0px;"></br></br><img src="images/TychosSupernova.jpg"alt="Illustration of Tycho's Supernova"style="height: 50%;width:50%;"/></th>
+         </tr>
+         <tr>
+           <th style="padding-left: 50px"><h2>Gravitational Waves</h2></br></br>On September 14, 2015, gravitational waves were detected for the first time by the <span style="color: brown">LIGO detectors</span>. These waves are tiny disturbances in spacetime that travel outwards from violent cosmic events that cause spacetime to contract and expand. The 2015 discovery detected gravitational waves from the collision of two massive <span style="color: brown">black holes</span> (between 29 and 36 solar masses) 1.3 billion years ago. Due to the incredibly large masses of the black holes, "ripples" were created through spacetime. Gravitational waves are extremely important in modern astrophysics since they provide scientists with information from the earliest stages of the Universe and how matter and energy have interacted in the past.</br></br></br>
+       </th>
+          <th style="padding-right: 0px;"></br></br><img src="images/gravitationalwaves.jpg"alt="Illustration of Gravitational Waves"style="height: 50%;width:50%;"/></th>
+
+         </tr>
+       </table>
+  </body>
+
+</html>

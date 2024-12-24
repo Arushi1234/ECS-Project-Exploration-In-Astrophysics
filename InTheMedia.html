@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>In The Media</title>
+  <link rel="stylesheet" typ="text/css"href="style.css">  
+  <style>   
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+
+.grid-item {
+  background-color: none;
+  border: 0px;
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}    
+    
+  .dropdown {
+  position: relative;
+  display: inline-block;
+}
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #85adad;;
+  min-width: 200%;
+  box-shadow: 0px 8px 16px 0px rgba(0.2,0.2,0.2,0.2);
+  padding: 0%;
+  z-index: 0;
+}
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown-content {
+color: black;
+font-family: helvetica;
+padding: 2%;
+}
+  * {box-sizing: border-box;}
+    
+  .img-zoom-container {
+    position: absolute;
+  }
+  .img-zoom-lens {
+    position: absolute;
+    border: 1px solid #d4d4d4;
+    width: 40px;
+    height: 40px;
+  }
+  .img-zoom-result {
+    border: 0px solid #d4d4d4; 
+    width: 250px; 
+    height: 250px;
+  }
+
+    h2 {
+      text-align: center;
+    }
+    
+</style>
+<script>
+  function imageZoom(imgID, resultID) {
+  var img, lens, result, cx, cy;
+  img = document.getElementById(imgID);
+  result = document.getElementById(resultID);
+
+  lens = document.createElement("DIV");
+  lens.setAttribute("class", "img-zoom-lens");
+
+  img.parentElement.insertBefore(lens, img);
+
+  cx = result.offsetWidth / lens.offsetWidth;
+  cy = result.offsetHeight / lens.offsetHeight;
+
+  result.style.backgroundImage = "url('" + img.src + "')";
+  result.style.backgroundSize = (img.width * cx) + "px " + (img.height * cy) + "px";
+
+  lens.addEventListener("mousemove", moveLens);
+  img.addEventListener("mousemove", moveLens);
+
+  lens.addEventListener("touchmove", moveLens);
+  img.addEventListener("touchmove", moveLens);
+
+  function moveLens(e) {
+    var pos, x, y;
+    e.preventDefault();
+    pos = getCursorPos(e);
+    x = pos.x - (lens.offsetWidth / 2);
+    y = pos.y - (lens.offsetHeight / 2);
+    if (x > img.width - lens.offsetWidth) {x = img.width - lens.offsetWidth;}
+    if (x < 0) {x = 0;}
+    if (y > img.height - lens.offsetHeight) {y = img.height - lens.offsetHeight;}
+    if (y < 0) {y = 0;}
+    lens.style.left = x + "px";
+    lens.style.top = y + "px";
+    result.style.backgroundPosition = "-" + (x*cx) + "px -" + (y*cy) + "px";
+  }
+function getCursorPos(e) {  
+  var a, x = 0, y = 0;
+  e = e || window.event;
+  a = img.getBoundingClientRect();
+  x = e.pageX - a.left;
+  y = e.pageY - a.top;
+  x = x - window.pageXOffset;
+  y = y - window.pageYOffset;
+  return {x : x, y : y};
+}
+}
+    
+</script>
+
+  </head>
+
+  
+<body>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="ModernIssues.html">  <div class="dropdown">
+            <span>Modern Problems</span>
+            <div class="dropdown-content">
+              <h5><a href="ModernIssues.html">Modern Problems</a></h5>
+              <h5><a href="BlackHoleInformationParadox.html">Black Hole Information Paradox</a></h5>
+              <h5><a href="DarkMatter.html">Dark Matter</a></h5>
+              <h5><a href="TheEarlyUniverse.html">The Origins Of The Universe</a></h5>
+            </div>
+          </div></a></li>
+          <li><a href="PastDevelopments.html">Past Developments and Discoveries</a></li>
+          <li><a href="Applications.html">Applications</a></li>
+          <li><a href="InTheMedia.html">In The Media And Public Sphere</a></li>
+
+        </ul>
+      </nav>
+<hr>
+</br>
+  
+<table>
+  <tr>
+    <th>
+<th><h1>In The Media And The Public Sphere</h1><h4>
+<i>Over the last few decades, astrophysics has become increasingly popular among the general public. From public disbelief at the capabilities of the Apollo Missions in the 1960s to the modern elites already buying tickets to visit space, the public interest in astrophysics has grown as a result of its portrayal in the media.<style>h4{text-align: center;padding: 30px;}</style></i></h4></th>
+    </th>
+    <th>
+      <img src="images/AstroNews.jpg"alt="Astrophysics News">
+    </th>
+  </tr>
+</table>
+<table>
+</br>
+<hr>
+  
+  <table style="width:96%">
+    <tr>
+      <div class="grid-container" style="width:80%;padding: 10px;">
+        <div class="grid-tem"> <h2></br></br>Popularity Over Time</h2><h4>As shown by data from the <i>American Astronomical Society</i>, the number of Bachelor's degrees earned in Astronomy has increased drastically. From 1975 to 2020, the number of degrees rose from just under 200 to over 800 in 2020. This is likely due to the evolution of science education in the U.S. According to the Department Of Education and the Ohio Energy Project, the quality of science education drastically improved during the era of the Space Race as the U.S. was forced to realize their inferior methods of teaching on a <em>global </em>scale. Over the next few decades, several programs were implemented in hopes of changing this. In particular, the <span style="color: brown">No Child Left Behind</span> program was implemented in 2001 which pushed for higher national standard and a greater emphasis on standardized testing by incentivizing high scoring schools. Likewise, it also emphasized the importance of mastery in subjects like reading and mathematics. However, critics argue that this focus on standardized assessments and providing incentives for high scoring schools negatively impacted students. In particular, teachers would start to hyperfocus on reading and math while neglecting other subject areas, such as science. Nonetheless, over the next few years, reforms were made to improve science education. For example, there has been a shift away from rote memorization and towards a deeper understanding of concepts through <span style="color: brown">critical thinking</span>. </br></br>Interest in science among young people has also been fueled by the increase in scientific principles incorporated in the media. This is evident within movies, books, and large-scale programs which have captured public attention, some of which are described in the following sections. Likewise, the <span style="color: brown">large scale availability of knowledge</span>, due to technology such as smartphones and laptops, have allowed the general public to catch a glimpse into the work of scientists conducting cutting-edge research. </h4></br></br></div>
+        <div class="grid-item"> <div class="img-zoom-container">
+          <img id="myimage" src="images/Astrograph.jpg" alt="Graph of astronomy degrees" width="250" height="250">
+          <div id="myresult" class="img-zoom-result"></div><p>Hover on top image to zoom</p>
+        </div>
+        <script>
+          imageZoom("myimage", "myresult");
+        </script></div>
+      </div>
+
+
+    </tr>
+    <tr><th></br><hr></th></tr>
+    <tr>
+    <th>
+ 
+
+      <h2>Space Travel</h2><p5>In modern times, interest in space travel (an aspect of astrophysics and aerospace engineering) has shifted. For example, ever since the <span style="color: brown">Apollo Missions</span> (the first series of missions to visit the Moon beginning in the 1960s), the general public has become far more invested in the idea of space travel. The first Moon landing triggered a brimming international curiosity to continue human exploration. As a result, the past few decades have been spent in trying to incrementally improve rockets, software, and hardware in order to reach destinations such as Mars. However, with the extremely slow progress, the public’s interest in space exploration has declined, even with NASA’s upcoming mission to return to the Moon. Similarly, private corporations have taken over the field after government <span style="color: brown">budget cuts</span> and control has slowed NASA’s progress.
+</p5>
+    </th>
+    <th>
+
+  </br>
+  </br>
+      <img src="images/SpaceTravelImage.jpg"alt="Rocket Launching Image"style="width:80%;height:80%;">
+    </th>
+  </tr>
+  <tr><th></br><hr></th></tr>
+  <tr>
+    <th>
+      <h2>Scientific Figures In The Media</h2><p5>Over time, astrophysics has also become more popular within the general media. For example, in the late 1970s, <span style="color: brown">Carl Sagan</span> created <em>Cosmos</em>, a 13-part series in which he illustrates the wonders of the Universe and human evolution. This played a major role in sparking interest in astrophysics among the general public. In more recent years, a similar role has been fulfilled by scientists such as <span style="color: brown">Neil DeGrasse Tyson</span> and <span style="color: brown">Brian Greene</span>. Tyson played a major role in popularizing concepts in astrophysics through the remaking of <em>Cosmos</em> and writing many books on the subject. Likewise, he has appeared on many commonly watched talk shows and also has a podcast of his own in which explains various aspects of astrophysics. Similarly, Brian Greene has also helped popularize astrophysics but has focused more on quantum mechanics and <span style="color: brown">string theory</span>. He has written and created several books and documentaries that introduce the subjects to the general public.</p5>
+    </th>
+    <th>
+      <img src="images/Cosmos.jpg"alt="Image of Cosmos Series Cover"style="width:80%;height:80%;"
+    </th>
+  </tr>
+  <tr><th></br><hr></br></th></tr>
+  <tr>
+    <th>
+      <h2>Interstellar</h2><p5><em>Interstellar</em> is a science fiction movie that incorporates many concepts of astrophysics surprisingly accurately. Central to its plot is a massive black hole called Gargantua. Unlike other science fiction films, <em>Interstellar</em> portrays the physics surrounding the black hole incredibly accurately, especially at a time when black holes were still a theoretical concept whose existance hadn't been confirmed. In particular, it details the effects of <a href="PastDevelopments.html"><span style="color: brown">time dilation</span></a>, a phenomenon that causes time to slow down near regions of extreme gravity. This occurs due to space and time being interlinked in a single entity known as spacetime, as described by <a href="PastDevelopments.html"><span style="color:brown">Einstein's theories of relativity.</span></a> Similarly, the physics surrounding the singularity of a black hole is also crucial to the main conflict. In short, towards the end of the story, the main character tries obtain the information about Gargantua's singularity and relay this back to Earth in order to reconcile quantum mechanics and general relativity to "save humanity". However, this is almost impossible since nothing can escape the gravitational pull of a black hole past its event horizon. Instead, humanity's future selves manage to transverse time in order to transport the main character into a tesseract. A tesseract is a four dimensional space in which time is another physical dimension and, according to what we currently know, it is not ruled out by physics. Finally, through the <a href="BlackHoleInformationParadox.html"><span style="color: brown">quantum information</span></a> from Gargantua's singularity, the scientists on Earth were able to solve an equation that explained the true nature of gravity. Overall, the concepts of astrophysics included in <em>Interstellar</em> are incredibly accurate and the cinematography embodies the many scientific theories being worked on today, making it a prime example of astrophysics in the media.</p5>
+    </th>
+    <th>
+      <img src="images/Interstellar.jpg"alt="Interstellar Movie Poster"style="width:80%;height:80%;>"
+    </th>
+  </tr>
+  <tr><th></br><hr></br></th></tr>
+  <tr>
+    <th>
+      <h2>Apollo 13</h2><p5>On April 11, 1970, the Apollo 13 Mission launched from the Kennedy Space Center in what was intended as the <span style="color: brown">third lunar landing</span>. However, the oxygen tank in the service module was ruptured while the crew was 200,000 miles from Earth, causing them to abort the mission. In order to do so, they performed a manual "slingshot" around Mars which gave them the velocity required to return to Earth. Although the mission failed, most people considered it a miracle that the astronauts were able to safely return to Earth. Later, in 1995, a movie was made detailing the mission. Fittingly called <i>Apollo 13</i>, the movie was suprisingly accurate. As a result, it became extremely popular among scientists and the general public alike.</p5>
+
+    </th>
+    </th>
+    <th>
+      <img src="images/Apollo13.jpg"alt="Apollo 13 Image"style="width:80%;height:80%;>"
+    </th>
+  </tr>
+</table>
+  
+</body>
+
+</html>
